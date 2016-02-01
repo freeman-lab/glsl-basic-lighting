@@ -3,7 +3,7 @@
 #pragma glslify: BasicLight = require('glsl-basic-light')
 #pragma glslify: BasicMaterial = require('glsl-basic-material')
 
-vec3 Lighting(BasicLight light, BasicMaterial material, vec3 normal, vec3 position, vec3 viewpoint) {
+vec3 BasicLighting(BasicLight light, BasicMaterial material, vec3 normal, vec3 position, vec3 viewpoint) {
 	if (!light.enabled) {return vec3(0.0);}
 	
 	float attenuation;
@@ -30,4 +30,4 @@ vec3 Lighting(BasicLight light, BasicMaterial material, vec3 normal, vec3 positi
 	return material.emissive + ambient + attenuation * combined * light.color * light.brightness;
 }
 
-#pragma glslify: export(Lighting)
+#pragma glslify: export(BasicLighting)

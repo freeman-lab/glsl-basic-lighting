@@ -6,7 +6,7 @@ Minimal GLSL function for applying light sources to a material. Designed for use
 
 To make avaialble in your project
 
-```javascript
+```bash
 npm install glsl-basic-lighting --save
 ```
 
@@ -14,13 +14,13 @@ npm install glsl-basic-lighting --save
 
 Define the function in your fragment shader
 
-```javascript
+```glsl
 #pragma glslify: BasicLighting = require('glsl-basic-lighting')
 ```
 
-then use it in to apply a light to a material
+then use it to apply a light to a material
 
-```javascript
+```glsl
 vec3 viewpoint = eye - position;
 vec3 result = BasicLighting(light, material, normal, position, viewpoint);
 gl_FragColor = vec4(result, 1);
@@ -28,11 +28,11 @@ gl_FragColor = vec4(result, 1);
 
 if you have multiple lights, you can use an array to apply them one at a time
 
-```javascript
+```glsl
 vec3 viewpoint = eye - position;
 vec3 result = vec3(0.0)
 for (int i = 0; i < N; ++i) {
-    result += BasicLighting(lights[i], material, vnormal, vposition, viewpoint);
+    result += BasicLighting(lights[i], material, normal, position, viewpoint);
 }
 gl_FragColor = vec4(result, 1);
 ```

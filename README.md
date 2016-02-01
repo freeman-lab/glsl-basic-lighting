@@ -23,7 +23,7 @@ then use it to apply a light to a material
 ```glsl
 vec3 viewpoint = eye - vposition;
 vec3 result = BasicLighting(light, material, vnormal, vposition, viewpoint);
-gl_FragColor = vec4(result, 1);
+gl_FragColor = vec4(result, 1.0);
 ```
 
 if you have multiple lights, you can use an array to apply them one at a time
@@ -34,7 +34,7 @@ vec3 result = vec3(0.0)
 for (int i = 0; i < N; ++i) {
     result += BasicLighting(lights[i], material, vnormal, vposition, viewpoint);
 }
-gl_FragColor = vec4(result, 1);
+gl_FragColor = vec4(result, 1.0);
 ```
 
 # algorithm

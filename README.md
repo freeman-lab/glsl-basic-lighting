@@ -39,11 +39,16 @@ gl_FragColor = vec4(result, 1.0);
 
 # algorithm
 
-Uses fairly standard methods to compute three different kinds of lighting -- point, directional, and spot light -- depending on the parameters of the light source. 
+Standard methods are used to compute the contribution for one of three different kinds of lights -- point, directional, and spot -- depending on the parameters of the light source. 
 
-The primary parameter of the light is the `position`, a `vec4` in homogenous coordinates. The fourth element determines whether the light is directional or not. If the fourth element is `0.0`, it will produce directional light, and the position vector will be treated as a direction. If the fourth element is `1.0`, it will be treated as a point light source. For point light sources, the parameters `target` and `cutoff` can additionally be used to create a spot light, i.e. light restricted to a cone, where `target` is where cone is pointing and `cutoff` is the angular direction. If `cutoff` is `180` there will be 
+The primary parameter of the light is the `position`, a `vec4` in homogenous coordinates. The fourth element determines whether the light is directional or not. 
 
-Finally, the light intensity is determined by adding four `material` `vec3` components: `emissive`, `ambient`, `diffuse`, and `specular`, each scaled appropriately by the calculated lighting coefficients. The diffuse and specular coefficients are computed using [`glsl-diffuse-oren-nayar`](https://github.com/stackgl/glsl-diffuse-oren-nayar) and [`glsl-specular-blinn-phong`](https://github.com/stackgl/glsl-specular-blinn-phong), controlled by the `material` parameters `shininess` and `roughness`. If either the `diffuse` or `specular` material properties are set to `[0.0, 0.0, 0.0]` these properties will be ignored.
+- If the fourth element is `0.0`, it will produce directional light, and the position vector will be treated as a direction. 
+- If the fourth element is `1.0`, it will be treated as a point light source. 
+
+For point light sources, the parameters `target` and `cutoff` can additionally be used to create a spot light, i.e. light restricted to a cone, where `target` is where cone is pointing and `cutoff` is the angular direction. If `cutoff` is `180` there will be no restriction.
+
+The final intensity is determined by adding four `material` `vec3` components: `emissive`, `ambient`, `diffuse`, and `specular`, each scaled appropriately by the calculated coefficients. The diffuse and specular coefficients are computed using [`glsl-diffuse-oren-nayar`](https://github.com/stackgl/glsl-diffuse-oren-nayar) and [`glsl-specular-blinn-phong`](https://github.com/stackgl/glsl-specular-blinn-phong), controlled by the `material` parameters `shininess` and `roughness`. If either the `diffuse` or `specular` material properties are set to `[0.0, 0.0, 0.0]` these properties will be ignored.
 
 # API
 

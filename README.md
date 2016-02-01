@@ -4,7 +4,7 @@ Minimal GLSL function for applying light sources to a material. Designed for use
 
 # install
 
-To make avaialble in your project
+To make available in your project
 
 ```bash
 npm install glsl-basic-lighting --save

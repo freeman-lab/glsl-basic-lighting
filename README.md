@@ -54,7 +54,7 @@ The final intensity is determined by adding four `material` `vec3` components: `
 
 #### `BasicLight(light, material, vnormal, vposition, viewpoint)`
 
-Inputs
+Parameters
 - `light` `struct` instance of `glsl-basic-light`
 - `material` `struct` instance of `glsl-basic-material`
 - `normal` `vec3` surface normal for the vertex

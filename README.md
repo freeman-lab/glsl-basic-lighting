@@ -39,7 +39,7 @@ gl_FragColor = vec4(result, 1.0);
 
 # algorithm
 
-Standard methods are used to compute the contribution for one of three different kinds of lights -- point, directional, and spot -- depending on the parameters of the light source. 
+Standard methods are used to compute the contribution of each light souce as either point, directional, or spot, depending on the parameters. For a good overview, see this [tutorial](http://www.tomdalling.com/blog/modern-opengl/07-more-lighting-ambient-specular-attenuation-gamma/).
 
 The primary parameter of the light is the `position`, a `vec4` in homogenous coordinates. The fourth element determines whether the light is directional or not. 
 

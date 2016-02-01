@@ -15,7 +15,7 @@ npm install glsl-basic-lighting --save
 Define the function in your fragment shader
 
 ```javascript
-pragma glslify: BasicLighting = require('glsl-basic-lighting')
+#pragma glslify: BasicLighting = require('glsl-basic-lighting')
 ```
 
 then use it in to apply a light to a material

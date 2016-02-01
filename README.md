@@ -21,18 +21,18 @@ Define the function in your fragment shader
 then use it to apply a light to a material
 
 ```glsl
-vec3 viewpoint = eye - position;
-vec3 result = BasicLighting(light, material, normal, position, viewpoint);
+vec3 viewpoint = eye - vposition;
+vec3 result = BasicLighting(light, material, vnormal, vposition, viewpoint);
 gl_FragColor = vec4(result, 1);
 ```
 
 if you have multiple lights, you can use an array to apply them one at a time
 
 ```glsl
-vec3 viewpoint = eye - position;
+vec3 viewpoint = eye - vposition;
 vec3 result = vec3(0.0)
 for (int i = 0; i < N; ++i) {
-    result += BasicLighting(lights[i], material, normal, position, viewpoint);
+    result += BasicLighting(lights[i], material, vnormal, vposition, viewpoint);
 }
 gl_FragColor = vec4(result, 1);
 ```
@@ -49,7 +49,7 @@ Finally, the light intensity is determined by adding four `material` `vec3` comp
 
 #### `pragma glslify: BasicLight = require('glsl-basic-light')`
 
-#### `BasicLight(light, material, normal, position, viewport)`
+#### `BasicLight(light, material, vnormal, vposition, viewpoint)`
 
 Inputs
 - `light` `struct` instance of `glsl-basic-light`

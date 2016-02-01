@@ -1,0 +1,39 @@
+{
+  "name": "glsl-basic-lighting",
+  "version": "1.0.0",
+  "description": "basic GLSL function for applying lights to materials",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeman-lab/glsl-basic-lighting.git"
+  },
+  "keywords": [
+    "glsl",
+    "glslify",
+    "webgl",
+    "shader",
+    "lightning",
+    "material",
+    "3d"
+  ],
+  "author": "freeman-lab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/freeman-lab/glsl-basic-lighting/issues"
+  },
+  "homepage": "https://github.com/freeman-lab/glsl-basic-lighting#readme",
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  },
+  "dependencies": {
+    "glsl-diffuse-oren-nayar": "^1.0.2",
+    "glsl-specular-blinn-phong": "^1.0.1",
+    "glsl-basic-material": "^1.0.0",
+    "glsl-basic-light": "^1.0.0"
+  }
+}

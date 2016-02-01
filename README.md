@@ -55,8 +55,8 @@ The final intensity is determined by adding four `material` `vec3` components: `
 #### `BasicLight(light, material, vnormal, vposition, viewpoint)`
 
 Parameters
-- `light` : `struct` instance of `glsl-basic-light`
-- `material` : `struct` instance of `glsl-basic-material`
+- `light` : `struct` instance of [`glsl-basic-light`](https://github.com/freeman-lab/glsl-basic-light)
+- `material` : `struct` instance of [`glsl-basic-material`](https://github.com/freeman-lab/glsl-basic-material)
 - `vnormal` : `vec3` surface normal for the vertex
 - `vposition` : `vec3` position of the vertex
 - `viewpoint` : `vec3` vector from the material surface torwards the camera

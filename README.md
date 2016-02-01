@@ -62,4 +62,4 @@ Parameters
 - `viewpoint` : `vec3` vector from the material surface torwards the camera
 
 Returns
-- `vec3` the computed for the material
+- `vec3` the computed color intensity for the material

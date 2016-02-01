@@ -1,9 +1,9 @@
 #pragma glslify: orenn = require('glsl-diffuse-oren-nayar')
 #pragma glslify: blinn = require('glsl-specular-blinn-phong')
-#pragma glslify: Light = require('glsl-basic-light')
-#pragma glslify: Material = require('glsl-basic-material')
+#pragma glslify: BasicLight = require('glsl-basic-light')
+#pragma glslify: BasicMaterial = require('glsl-basic-material')
 
-vec3 Lighting(Light light, Material material, vec3 normal, vec3 position, vec3 viewpoint) {
+vec3 Lighting(BasicLight light, BasicMaterial material, vec3 normal, vec3 position, vec3 viewpoint) {
 	if (!light.enabled) {return vec3(0.0);}
 	
 	float attenuation;

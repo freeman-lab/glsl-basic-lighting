@@ -52,8 +52,6 @@ The final intensity is determined by adding four `material` `vec3` components: `
 
 # API
 
-#### `pragma glslify: BasicLight = require('glsl-basic-light')`
-
 #### `BasicLight(light, material, vnormal, vposition, viewpoint)`
 
 Inputs
